@@ -1,4 +1,4 @@
-lista = ['Asi','Te','queria','Agarrar','Puerco!!!']
+listamercado= ["arroz","azucar","aceite","jugo"]
 def listarRostros():
     archivo = open("./Almacenamiento/Rostros.txt","r")
     for linea in archivo:
@@ -11,7 +11,7 @@ def EscribirRostro(lista):
         archivo.write(lista[linea] + "\n")
     archivo.close()
 
-listamercado= ["arroz","azucar","aceite","jugo"]
+
 listarRostros()
 EscribirRostro(listamercado)
 listarRostros()
