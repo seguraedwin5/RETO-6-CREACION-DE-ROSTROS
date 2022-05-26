@@ -1,0 +1,47 @@
+"""
+REGISTRO DEL AVATAR
+>lista de rasgos
+---la lista de rasgos son cabello, ojos, oreja/nariz, boca, menton 
+>sublistas opciones rasgos
+--la serie de opciones muestra la posibilidad de elegir conjunto de caracteres para cada rasgo
+>mostrar avance de construccion de avatar
+---print del avance del avatar
+>ingresar nombre de avatar 
+---print input nombre del avatar
+>almacenar avatares como archivo con nombre
+---usar funciones y librerias  para el almacenamiento del avatares
+>consultar avatar con nombre
+---traer desde el ordenador el avatar almacenado con nombre
+>listar avatares almacenados
+---traer desde almacenamiento lista de los avatares almacenados
+"""
+
+print("Registra tu AVATAR")
+
+#lista de rasgos
+rasgo = int(input("Ingrese el rasgo que desea editar: \n 1 Cabello \n 2 Ojos \n 3 Orejas/Nariz \n 4 Boca \n 5 mentón \n"))
+
+#sublista de cada rasgo
+if rasgo == 1 or 2 or 3 or 4 or 5 :
+  
+  #cabello
+  if rasgo == 1 : 
+   int(input("Elija el cabello que desea:\n 1 Crespo ➰ \n 2 Rubio 🟨 \n 3 Café 🟫 \n 4 Negro ⬛ \n 5 Peinado 〰 \n"))
+    
+  #ojos
+  elif rasgo == 2 : 
+    int(input("Elija los ojos que desea:\n 1 Ojos pequeños 👁 👁 \n 2 Ojos OnFire 🔥 🔥 \n 3 Sospechosos 👀 \n 4 Corazón 💗 💗 \n 5 Orientales ➖ ➖ \n")) #◉
+    
+  #orejas/nariz
+  elif rasgo == 3 : 
+    int(input("Elija las orejas y nariz que desea:\n 1 Naríz normal 👂  👃  👂 \n 2 Nariz pequeña 👂  ω  👂 \n 3 Chanchito 👂 🐽 👂\n 4 Osito 👂  ㅅ  👂 \n 5 Lengua de señas 🦻  👃  🦻 \n")) 
+    
+  #boca
+  elif rasgo == 4 :
+    int(input("Elija la boca que desea:\n 1 Labios 👄 \n 2 Sacar lengua 👅 \n 3 Beso ❌ \n 4 Grosería 💢 \n 5 Sin boca \n"))
+    
+  #mentón
+  elif rasgo == 5 :
+    int(input("Elija el mentón que desea:\n 1 Plano \_____/ \n 2 Barbilla \__ˆ__/ \n 3 Coqueto \__∙__/ \n Barbilludo 4 \__±__/ \n 5 Estilo \__¸__/ \n")) 
+  else :
+    print(input("Elija una opción correcto\n")) #error de eleccion diferente de 1 a 5
