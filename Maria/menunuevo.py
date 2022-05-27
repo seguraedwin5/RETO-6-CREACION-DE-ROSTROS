@@ -1,5 +1,12 @@
+from collections import namedtuple
+import pprint
 import Maria.listasRostros as lr
 import Maria.almacenamientoRostros as ar
+import Maria.codificarRostros as codif
+
+
+#Creacion de tupla Rostro
+TupRostro = namedtuple('TupRostro',['Nombre','Cabello','Ojos','Nariz','Boca','Menton'])
 RostroCompleto = []
 #cabello
 while True:
@@ -21,7 +28,7 @@ while True:
       RostroCompleto.append(cabellocreado)
       break
     elif opcioncabello == 4:
-      cabellocreado = cr.crearCabello('⬛')
+      cabellocreado = lr.crearCabello('⬛')
       print(''.join(cabellocreado))
       RostroCompleto.append(cabellocreado)
       break
@@ -52,7 +59,7 @@ while True:
       RostroCompleto.append(ojoscreados)
       break
     elif opcionojos == 3:
-      ojoscreados =lrr.crearOjos2('👀')
+      ojoscreados =lr.crearOjos2('👀')
       print(''.join(ojoscreados))
       RostroCompleto.append(ojoscreados)
       break
@@ -85,7 +92,7 @@ while True:
       RostroCompleto.append(narizcreada)
       break
     elif opcionnariz == 2:
-      narizcreada =lrr.crearNariz('👂     ω    👂')
+      narizcreada =lr.crearNariz('👂     ω    👂')
       print(''.join(narizcreada))
       RostroCompleto.append(narizcreada)
       break
@@ -189,4 +196,9 @@ print('\n -------Rostro Generado------- \n')
 for fila in RostroCompleto:
   print (''.join(map(str, fila)))
 
-ar.EscribirRostro(RostroCompleto)
+#Solicitar nombre del rostro
+nombre = str(input("Digite el nombre para el rostro antes de guardar:"))
+Rostrodecodificado = TupRostro(nombre,RostroCompleto[0],RostroCompleto[1],RostroCompleto[2],RostroCompleto[3],RostroCompleto[4])
+_diccionarioRostro = Rostrodecodificado._asdict()
+RostroCodificado = codif.codificar(_diccionarioRostro)
+ar.EscribirRostro(RostroCodificado)

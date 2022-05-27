@@ -1,3 +1,4 @@
+
 #crear cabello
 def crearCabello(imagen):
     pelo = []
