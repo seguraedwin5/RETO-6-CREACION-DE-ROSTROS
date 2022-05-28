@@ -1,5 +1,7 @@
 import json
+from operator import indexOf
 import pprint
+import Maria.codificarRostros as codif
 
 def listarRostros():
     rostrolista = []
@@ -31,17 +33,31 @@ def EscribirRostrojson(dictRostro:dict):
     with open("./Almacenamiento/Rostros.json","w") as archivo:
         listadict.append(dictRostro)#transformar
         json.dump(listadict, archivo, indent=4)#guardar y Cerrar
-        
+
+#se Recibe la lista de diccionarios de rostros y los imprime 
 def ListarRostrosjson(Listadrostros):
     for elemento in Listadrostros:
-            pprint.pprint(elemento)
+        rostrodec = codif.decodificar(elemento)
+        codif.mostrarRostrodecodif(rostrodec)
+        print("\n")
+            
         
 def ObtenerRostrosjson():
     listadatos = [] #crear lista vacia
     with open("./Almacenamiento/Rostros.json","r") as archivo: #Abrir Archivo json
         listadatos = json.load(archivo) #transformar lo que esta en el archivo json en lista de diccionarios
-        
-    return listadatos
+    return listadatos #retorna la lista de diccionarios
+
+def ObtenerRostroporNombre(NombreRostro:str):
+    listadicrostros = []
+    with open("./Almacenamiento/Rostros.json","r") as archivo:
+        listadicrostros = json.load(archivo)
+    for dicc in listadicrostros:
+        if dicc["Nombre"] == NombreRostro:
+            resultado = dicc#retorna el diccionario
+    if resultado == None:
+        return "No se encontró el resultado"
+    return resultado
 
 
 

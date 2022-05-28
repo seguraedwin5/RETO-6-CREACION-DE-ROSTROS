@@ -22,8 +22,27 @@ def codificar(diccionarioRostro:dict):
     
     #print(f"\n{_Nombre}\n{_Cabello}\n{_Ojos}\n{_Nariz}\n{_Boca}\n{_Menton}")
 
-def decodificar(rostroArchivo):
-    pass
+def decodificar(diccrostrocodif:dict):
+    Rostrodecod = []
+    _nombre = diccrostrocodif["Nombre"]
+    _cabello = diccrostrocodif["Cabello"]
+    _ojos = diccrostrocodif["Ojos"]
+    _nariz = diccrostrocodif["Nariz"]
+    _boca = diccrostrocodif["Boca"]
+    _menton = diccrostrocodif["Menton"]
+
+    cabellodec = decodificarlista(_cabello)
+    ojosdec = decodificarlista(_ojos)
+    narizdec = decodificarlista(_nariz)
+    bocadec = decodificarlista(_boca)
+    mentondec = decodificarlista(_menton)
+    Rostrodecod.extend([_nombre,cabellodec,ojosdec,narizdec,bocadec,mentondec])
+
+    return Rostrodecod
+    
+def mostrarRostrodecodif(mtzRostro):
+    for fila in mtzRostro:
+        print(''.join(map(str,fila)))
 
 def contarelementos(ListaCaracteristica:list):
     listacodigo=[]
@@ -46,6 +65,20 @@ def contarelementos(ListaCaracteristica:list):
                 listacodigo.extend([contador,itemanterior])
                 contador = 0
     return listacodigo
+
+def decodificarlista(listacodificada:list):
+    listadecodificada = []
+    for item in range(0,len(listacodificada)-1):
+        numero = 0
+        logo = ''
+        if item%2 == 0:
+            numero = listacodificada[item]
+            logo = listacodificada[item+1]
+            while (numero > 0):
+                listadecodificada.append(logo)
+                numero -= 1
+    return listadecodificada
+            
 
 
         
