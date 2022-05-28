@@ -201,4 +201,7 @@ nombre = str(input("Digite el nombre para el rostro antes de guardar:"))
 Rostrodecodificado = TupRostro(nombre,RostroCompleto[0],RostroCompleto[1],RostroCompleto[2],RostroCompleto[3],RostroCompleto[4])
 _diccionarioRostro = Rostrodecodificado._asdict()
 RostroCodificado = codif.codificar(_diccionarioRostro)
-ar.EscribirRostro(RostroCodificado)
+
+ar.EscribirRostrojson(RostroCodificado._asdict())
+ar.ListarRostrosjson(ar.ObtenerRostrosjson())
+

@@ -1,6 +1,7 @@
-
+from collections import namedtuple
 
 def codificar(diccionarioRostro:dict):
+    Rostrocod = namedtuple('Rostrocod',['Nombre','Cabello','Ojos','Nariz','Boca','Menton'])
     #Listas de las  caracteristicas sin codificar
     _Nombre = diccionarioRostro.get("Nombre")
     _Cabello = diccionarioRostro.get("Cabello")
@@ -16,7 +17,7 @@ def codificar(diccionarioRostro:dict):
     Bocacod = contarelementos(_Boca)
     Mentoncod = contarelementos(_Menton)
     #listas codificadas
-    return (_Nombre,Cabellocod,Ojoscod,Narizcod,Bocacod,Mentoncod)
+    return Rostrocod(_Nombre,Cabellocod,Ojoscod,Narizcod,Bocacod,Mentoncod)
 
     
     #print(f"\n{_Nombre}\n{_Cabello}\n{_Ojos}\n{_Nariz}\n{_Boca}\n{_Menton}")
